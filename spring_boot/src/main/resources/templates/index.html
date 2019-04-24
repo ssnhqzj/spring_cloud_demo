@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <div>
+        Name:<span th:text="${name}"></span>
+        Version:<span th:text="${version}"></span>
+        User: name=<span th:text="${user.getUsername()}"></span>,age=<span th:text="${user.getAge()}"></span>
+    </div>
+</body>
+</html>
