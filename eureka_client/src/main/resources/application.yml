@@ -5,12 +5,6 @@ spring:
   application:
     name: eureka-client #ribbon名称不支持下划线_
 
-  session:
-    store-type: redis
-    redis:
-      flush-mode: immediate
-      namespace: spring:session
-
   redis:
     cluster:
       nodes: 192.168.204.129:7000,192.168.204.129:7001,192.168.204.129:7002

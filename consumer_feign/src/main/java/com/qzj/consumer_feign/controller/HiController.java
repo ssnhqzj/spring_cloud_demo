@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class HiController {
 
@@ -19,13 +21,14 @@ public class HiController {
     }
 
     @GetMapping(value = "/setsession")
-    public String setSession(@RequestParam String name) {
-        return hiService.setSession(name);
+    public String setSession(HttpServletRequest request) {
+        request.getSession().setAttribute("name","qzj");
+        return "session: name=qzj已设置";
     }
 
     @GetMapping(value = "/getsession")
-    public String getSession() {
-        return hiService.getSession();
+    public String getSession(HttpServletRequest request) {
+        return "获取session: name="+request.getSession().getAttribute("name");
     }
 
 }
